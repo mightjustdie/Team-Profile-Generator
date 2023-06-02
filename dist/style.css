@@ -1,33 +1,114 @@
 :root {
-    --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
-      "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
-      "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
   
     --card-rgb: 180, 185, 188;
     --card-border-rgb: 131, 134, 135;
   
-    --primary: rgb(48, 48, 48);
-    --second: rgb(255, 255, 255);
+    --primary: rgb(0, 0, 0);
+    --second: rgb(223, 80, 241);
+  }
+  
+  * {
+    color: var(--second);
   }
   
   body {
-    background-color: var(--primary);
+    background-color: rgb(40, 40, 40);
+    min-height: 800px;
   }
   
-  .card {
-    height: 300px;
-    margin-left: 20%;
-    margin-top: 60px;
-    margin-bottom: 60px;
-    margin-right: 17%;
+  nav {
+    width: 100%;
+    height: 70px;
+    background-color: var(--second);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+  }
+  
+  nav h1 {
+    color: rgb(40, 40, 40);
+    text-align: center;
+    font-size: 35px;
+    font-family: "Courier New", Courier,;
+  }
+  
+  main {
+    position: absolute;
+    top: 50%;
+    left: 13%;
+    transform: translate(-0%, -50%);
+  }
+  
+  .cardlg {
+    margin-top: 9%;
+    margin-left: 3%;
     border-radius: 10px;
     background: rgba(var(--card-rgb), 0.1);
     border: 1px solid rgba(var(--card-border-rgb), 0.15);
-    max-width: 250px;
     text-align: center;
   }
   
+  .cardsm {
+    margin-top: 3%;
+    margin-left: 4.5%;
+    border-radius: 10px;
+    background: rgba(var(--card-rgb), 0.1);
+    border: 1px solid rgba(var(--card-border-rgb), 0.15);
+    text-align: center;
+  }
+  
+  .cardlg h2,
+  .cardsm h2 {
+    color: var(--primary);
+    background-color: var(--second);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 40px;
+    margin-top: 5px;
+  }
+  
   h2 {
-      text-align: center;
-      margin-bottom: 10px;
+    color: var(--second);
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    border-radius: 5px;
+    background-color: var(--second);
+    border: 1px solid var(--second);
+    color: var(--primary);
+    margin-bottom: 5%;
+  }
+  
+  a {
+    display: block;
+    text-decoration: none;
+    color: var(--primary)
+  }
+  
+  a :hover {
+    opacity: 0.7;
+    cursor: pointer;
+  }
+  
+  @media screen and (max-width: 991px) {
+    main {
+      top: 115%;
+    }
+    .cardsm {
+      margin-left: 3%;
+    }
+    body {
+      min-height: 1500px;
+    }
+  }
+  @media screen and (max-width: 720px) {
+    main {
+      top: 105%;
+    }
+    .cardsm {
+      margin-left: 3%;
+    }
   }
