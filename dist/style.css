@@ -1,0 +1,36 @@
+:root {
+    --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+      "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+      "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+  
+    --card-rgb: 180, 185, 188;
+    --card-border-rgb: 131, 134, 135;
+  
+    --primary: rgb(48, 48, 48);
+    --second: rgb(255, 255, 255);
+  }
+  
+  body {
+    background-color: var(--primary);
+  }
+  
+  .card {
+    height: 300px;
+    margin-left: 20%;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    margin-right: 17%;
+    border-radius: 10px;
+    background: rgba(var(--card-rgb), 0.1);
+    border: 1px solid rgba(var(--card-border-rgb), 0.15);
+    max-width: 250px;
+  }
+  
+  a, p, h3{
+      text-align: center;
+  }
+  
+  h2 {
+      text-align: center;
+      margin-bottom: 10px;
+  }

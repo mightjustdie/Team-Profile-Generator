@@ -1,12 +1,16 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const Engineer = require('./lib/engineer');
+const Engineer = require("./lib/engineer");
+const Manager = require('./lib/manager');
+const Intern = require('./lib/intern');
 
 const objectsArr = [];
 
-const renderHtml = (fill) => {
+const renderHtml = (element) => {
+  const { type, name, certs, github, phone } = element;
+
   return `
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,10 +20,15 @@ const renderHtml = (fill) => {
     <link rel='stylesheet' href='./style.css'> 
 </head>
 <body>
- <card> 
- <div> email: ${fill} </div>
- </card> 
-    
+
+ <div class="card"> 
+  <h2> ${type} </h2>
+  <h3> ${name} </h3>
+  <h3> ${certs} </h3> 
+  <a href='${github}' >  Github </a>
+  <h3> ${phone} </h3>
+</div>
+
 </body>
 </html>
     `;
@@ -27,44 +36,96 @@ const renderHtml = (fill) => {
 
 const renderData = () => {
   objectsArr.forEach((element) => {
-    const { name, certs, github, phone } = element;
-    const fill = renderHtml(github);
+    const fill = renderHtml(element);
 
-    fs.appendFile("index.html", fill, (err) => {
-      err ? console.log(err) : console.log("sucess");
+    const { type } = element;
+
+    fs.appendFile("./dist/index.html", fill, (err) => {
+      err ? console.log(err) : console.log(`Sucessfully made a ${type} card`);
     });
   });
 };
 
 const decide = ({ type }) => {
   if (type === "engineer") {
-    qlForEng();
+    qlForEng(type);
   } else if (type === "manager") {
-    qlForMgmt();
+    qlForMgmt(type);
+  } else if (type === 'intern') {
+    qlForIntern(type)
   }
 };
 
-const createObject = ({ certs, name }) => {
-  objectsArr.push(new Engineer(certs, name));
+const createObject = ({ certs, name }, type ) => {
+  if(type === 'engineer') {
+  objectsArr.push(new Engineer(type, certs, name));
+  console.log('en')
+  }
+  if (type === 'manager') {
+    objectsArr.push(new Manager(type, certs, name))
+    console.log('mg')
+  }
+  if (type === 'intern') {
+    objectsArr.push(new Intern(type, certs, name))
+    console.log('it')
+  }
   moreEmp();
 };
 
-const qlForEng = () => {
+const qlForEng = (type) => {
   inquirer
     .prompt([
-      {
-        type: "input",
-        message: "What certifications do you have?",
-        name: "certs",
-      },
       {
         type: "input",
         message: "What is your name? ",
         name: "name",
       },
+      {
+        type: "input",
+        message: "What certifications do you have?",
+        name: "certs",
+      },
     ])
     .then((data) => {
-      createObject(data);
+      createObject(data, type);
+    });
+};
+
+const qlForMgmt = (type) => {
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        message: "What is your name? ",
+        name: "name",
+      },
+      {
+        type: "input",
+        message: "What certifications do you have?",
+        name: "certs",
+      },
+    ])
+    .then((data) => {
+      createObject(data, type);
+    });
+};
+
+const qlForIntern = (type) => {
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        message: "What is your name? ",
+        name: "name",
+      },
+      {
+        type: "input",
+        message: "What certifications do you have?",
+        name: "certs",
+      },
+    ])
+    .then((data) => {
+      createObject(data, type);
     });
 };
 
@@ -75,7 +136,7 @@ const app = () => {
         type: "list",
         message: "What type of employee is this?",
         name: "type",
-        choices: ["manager", "engineer"],
+        choices: ["manager", "engineer", "intern" ],
       },
     ])
     .then((data) => {
