@@ -1,51 +1,80 @@
-# Module 10 Challenge: OOP Team Profile Generator
-## Description
 
-The focus of this unit was Object Oriented Programming and unit testing. The objective for this project was to build a Node.js command-line application that takes in information about employees on a software engineering team, and with that information generates an HTML webpage that displays the user input data. One requirement of the application was to make use of Constructors and Classes to create the employee objects. Among these were the Employee, Manager, Engineer, and Intern classes. In addition to building the application, this project also required the use of Jest and Inquirer to conduct unit tests of every part of the code to ensure that it would pass each test. A demonstration of the node application and the testing is shown below.
+  # Team Profile Generator
 
-## Table of Contents
 
-- [User Story](#user-story)
-- [Acceptance Criteria](#acceptance-criteria)
-- [Screenshot](#screenshot)
-- [Walkthrough Video](#walkthrough-video)
-- [Credits](#credits)
-- [License](#license)
+  ## Description
 
-# User Story
+  This was developed in mind to better manage your team, while being easily able to click links for github or send an email. As well as to practice my skills in object oriented programming. 
 
-```md
-AS A manager
-I WANT to generate a webpage that displays my team's basic info
-SO THAT I have quick access to their emails and GitHub profiles
-```
 
-## Acceptance Criteria
 
-```md
-GIVEN a command-line application that accepts user input
-WHEN I am prompted for my team members and their information
-THEN an HTML file is generated that displays a nicely formatted team roster based on user input
-WHEN I click on an email address in the HTML
-THEN my default email program opens and populates the TO field of the email with the address
-WHEN I click on the GitHub username
-THEN that GitHub profile opens in a new tab
-WHEN I start the application
-THEN I am prompted to enter the team manager’s name, employee ID, email address, and office number
-WHEN I enter the team manager’s name, employee ID, email address, and office number
-THEN I am presented with a menu with the option to add an engineer or an intern or to finish building my team
-WHEN I select the engineer option
-THEN I am prompted to enter the engineer’s name, ID, email, and GitHub username, and I am taken back to the menu
-WHEN I select the intern option
-THEN I am prompted to enter the intern’s name, ID, email, and school, and I am taken back to the menu
-WHEN I decide to finish building my team
-THEN I exit the application, and the HTML is generated
-```
+  ## Table of contents
 
-## Screenshot
-This is a screenshot of the generated HTML webpage.
+  - [ Link ](#link)
+  - [ Screenshot ](#screenshot)
+  - [ Installation ](#installation)
+  - [ Usage ](#usage)
+  - [ Contributions ](#contributions)
+  - [ Tests ](#tests)
+  - [ Questions ](#questions)
+  - [ License ](#license)
 
-![Team Generator HTML Webpage Screenshot]()
 
-## Walkthrough Video
-![Team Generator Walkthrough Video]()
+  ## Link
+
+  [Click Here](https://github.com/mightjustdie/Team-Profile-Generator) to go to the repo link.
+
+
+
+  ## Screenshot
+
+  ![image](./assets/tpgss.png)
+
+
+
+  ## Installation
+
+  Simply fork the repository, clone it down to your local machine then in the CLI while at the relative directory, use 'npm i' to intall all dependancies in the package-json. 
+
+
+
+  ## Usage
+
+  In order to run the script after installing depandancies in the step above in the CLI at relative directory use 'node index.js' to start the script. Then follow the prompts untill you have no more team members to add then you can select the prompt that asks if you wish to add an additional team member, select 'No'. Then the HTML file will auto generated inside of the dist folder. 
+
+
+  ## Contributions
+
+  How to contribute?: 
+  To contribute follow ensure that your code is using best practices and naming conventions for varibales, please ensure that your code is commented as well. Then create a pull request. In the request detail the reason for the change and all changes made as well as why these changes would benefit the project or what bugs were found and fixed, and how to recreate these bugs. Pull requests that do not follow this format will not be reviewed or accepted. 
+
+
+
+  ## Tests
+
+  This application is using jest , to start a test, use command 'npm test' in CLI at 
+  _ _test_ _ directory. To write a test add files under the same _ _test_ _ folder.
+
+
+
+  ## Questions
+
+  Github - Brenden T. - https://github.com/mightjustdie
+
+  Email - brenthomas02@gmail.com@gmail.com
+
+  ## License
+
+  MIT [![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE) 
+
+   To see full details visit https://opensource.org/license/mit/
+
+
+   Preview... 
+
+
+      Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+      The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+      THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
