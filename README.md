@@ -61,7 +61,7 @@
 
   Github - Brenden T. - https://github.com/mightjustdie
 
-  Email - brenthomas02@gmail.com@gmail.com
+  Email - brenthomas02@gmail.com
 
   ## License
 
